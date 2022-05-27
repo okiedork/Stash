@@ -1,0 +1,10 @@
+services:
+  php:
+    image: test-php:latest
+    build: .
+    depends_on:
+      - redis
+    command: ["php", "-f", "/usr/src/test.php"]
+
+  redis:
+    image: redis:7.0
